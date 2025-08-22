@@ -1,4 +1,3 @@
-from load_image import ft_load
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -9,8 +8,11 @@ def display_image(image):
     """
     print(f"The shape of image is: {image.shape}")
     print(image)
-    plt.imshow(image)
-    plt.show()
+    try:
+        plt.imshow(image)
+        plt.show()
+    except KeyboardInterrupt:
+        print("Image display interrupted by user.")
 
 
 def ft_invert(array):

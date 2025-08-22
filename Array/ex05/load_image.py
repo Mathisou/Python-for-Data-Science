@@ -9,7 +9,9 @@ def ft_load(path: str):
     """
     try:
         if not path.lower().endswith(('.jpg', '.jpeg')):
-            raise ValueError("Unsupported file format. Only .jpg and .jpeg are allowed.")
+            raise ValueError(
+                "Unsupported file format. Only .jpg and .jpeg are allowed."
+                )
         if not os.path.exists(path):
             raise FileNotFoundError(f"The file {path} does not exist.")
         img = Image.open(path)

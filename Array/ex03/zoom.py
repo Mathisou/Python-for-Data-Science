@@ -6,11 +6,14 @@ def display_image(image):
     """
     Display the image using matplotlib.
     """
-    plt.imshow(image, cmap='gray')
-    plt.show()
+    try:
+        plt.imshow(image, cmap='gray')
+        plt.show()
+    except KeyboardInterrupt:
+        print("Image display interrupted by user.")
 
 
-def main(xmin=100, xmax=500, ymin=100, ymax=500):
+def main(xmin=450, xmax=850, ymin=150, ymax=550):
     """
     Zooms into a specified region of the image.
     """

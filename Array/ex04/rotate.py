@@ -7,8 +7,11 @@ def display_image(image):
     """
     Display the image using matplotlib.
     """
-    plt.imshow(image, cmap='gray')
-    plt.show()
+    try:
+        plt.imshow(image, cmap='gray')
+        plt.show()
+    except KeyboardInterrupt:
+        print("Image display interrupted by user.")
 
 
 def zoom(xmin=450, xmax=850, ymin=150, ymax=550):
