@@ -17,7 +17,7 @@ MORSE_CODE_DICT = {' ': '/', 'A': '.-', 'B': '-...',
 
 
 def check_args():
-    """Check if the number of arguments is correct and if the input is valid."""
+    """Check if the number of arguments is correct and if the input is valid"""
     if len(sys.argv) != 2:
         raise AssertionError("the arguments are bad")
     if not all(char.isalnum() or char == ' ' for char in sys.argv[1]):

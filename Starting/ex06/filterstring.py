@@ -22,7 +22,7 @@ def main():
         filtered = ft_filter(lambda word: len(word) > n, text.split())
         print(filtered)
     except AssertionError as e:
-        print(e)
+        print(f"AssertionError: {e}")
         sys.exit(1)
 
 
