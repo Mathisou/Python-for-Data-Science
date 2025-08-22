@@ -16,18 +16,21 @@ def display_life_expectancy(country: str, df: pd.DataFrame):
     country_df = df[df["country"] == country]
     years = country_df.columns[1:]
     life_expectancy = country_df.values[0][1:]
-
-    plt.plot(years, life_expectancy)
-    plt.xlabel('Year')
-    plt.ylabel('Life Expectancy')
-    plt.title('France Life Expectancy Projections')
-    plt.xticks(years[::40])
-    plt.show()
+    try:
+        plt.plot(years, life_expectancy)
+        plt.xlabel('Year')
+        plt.ylabel('Life Expectancy')
+        plt.title(f'{country} Life Expectancy Projections')
+        plt.xticks(years[::40])
+        plt.show()
+    except KeyboardInterrupt:
+        print("Image display interrupted by user.")
 
 
 def main():
     """
-    Main function to load the dataset and display life expectancy for given country.
+    Main function to load the dataset and display
+    life expectancy for given country.
     """
     df = load('life_expectancy_years.csv')
     if df is not None:

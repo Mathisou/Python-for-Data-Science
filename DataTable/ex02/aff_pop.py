@@ -40,15 +40,18 @@ def display_populations(country1: str, country2: str, df: pd.DataFrame):
     country2_years = country2_df.columns[1:-50]
     population2 = normalize(country2_df.values[0][1:-50])
 
-    plt.plot(country2_years, population2, color='blue')
-    plt.plot(country1_years, population1, color='green')
-    plt.xlabel('Year')
-    plt.ylabel('Population')
-    plt.title('Population Projections')
-    plt.yticks([20000000, 40000000, 60000000], ["20M", "40M", "60M"])
-    plt.xticks(country1_years[::40])
-    plt.legend([country2, country1], loc='lower right')
-    plt.show()
+    try:
+        plt.plot(country2_years, population2, color='blue')
+        plt.plot(country1_years, population1, color='green')
+        plt.xlabel('Year')
+        plt.ylabel('Population')
+        plt.title('Population Projections')
+        plt.yticks([20000000, 40000000, 60000000], ["20M", "40M", "60M"])
+        plt.xticks(country1_years[::40])
+        plt.legend([country2, country1], loc='lower right')
+        plt.show()
+    except KeyboardInterrupt:
+        print("Image display interrupted by user.")
 
 
 def main():
